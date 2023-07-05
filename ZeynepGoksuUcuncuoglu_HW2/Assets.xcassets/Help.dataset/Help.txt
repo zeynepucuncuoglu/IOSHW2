@@ -1,0 +1,18 @@
+// MainVC code to set the background gradient ( call this function from viewDidLoad() )
+func setBackground() {
+        // Create a gradient layer.
+        let gradientLayer = CAGradientLayer()
+        // Set the size of the layer to be equal to the size of display.
+        gradientLayer.frame = view.bounds
+        // Set an array of Core Graphics colors (.cgColor) to create the gradient.
+        gradientLayer.colors = [#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1).cgColor, #colorLiteral(red: 0.9622398019, green: 0.9249638319, blue: 0.7202355266, alpha: 1).cgColor]
+        // Rasterize this static layer to improve app performance.
+        gradientLayer.shouldRasterize = true
+        // Apply the gradient to the view.
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        
+    }
+
+override var shouldAutorotate: Bool {
+        return false
+    }
